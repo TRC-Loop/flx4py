@@ -1,5 +1,3 @@
-# DDJ FLX 4 MIDI Mappings
-
 # DDJ-FLX4 MIDI Mapping Reference
 
 | Deck | Input Type       | Name/Position        | Channel | Note / Control | Value (Press/Release or Turn) | Description                        | Label / Function |
