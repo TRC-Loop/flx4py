@@ -1,0 +1,73 @@
+site_name: flx4py
+site_url: https://trc-loop.github.io/flx4py/
+site_description: Python library for the Pioneer DDJ-FLX4 DJ controller.
+site_author: Arne K. (TRC-Loop)
+
+repo_url: https://github.com/TRC-Loop/flx4py
+repo_name: TRC-Loop/flx4py
+edit_uri: edit/main/docs/
+
+theme:
+  name: material
+  palette:
+    - scheme: slate
+      primary: deep purple
+      accent: purple
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+    - scheme: default
+      primary: deep purple
+      accent: purple
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.top
+    - search.highlight
+    - search.suggest
+    - content.code.copy
+    - content.code.annotate
+  icon:
+    repo: fontawesome/brands/github
+
+plugins:
+  - search
+  - mkdocstrings:
+      handlers:
+        python:
+          options:
+            docstring_style: google
+            show_source: true
+            show_root_heading: true
+            heading_level: 2
+            members_order: source
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.tabbed:
+      alternate_style: true
+  - attr_list
+  - def_list
+  - tables
+
+nav:
+  - Home: index.md
+  - Getting Started:
+      - Installation: guide/installation.md
+      - Quick Start: guide/quickstart.md
+      - Callbacks: guide/callbacks.md
+      - LED Control: guide/leds.md
+      - Animations: guide/animations.md
+  - API Reference:
+      - DDJFlx4: api/controller.md
+      - LEDController: api/leds.md
+      - Events: api/events.md
+  - MIDI Mappings: mappings.md
