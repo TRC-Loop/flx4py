@@ -5,6 +5,13 @@ Complete MIDI mapping table for the Pioneer DDJ-FLX4. These are the raw addresse
 !!! note
     You don't need this page to use the library. It's here for reference if you want to understand what's happening under the hood or extend the library.
 
+!!! tip "Official Pioneer reference"
+    The full official MIDI message list for the DDJ-FLX4 is available from Pioneer DJ:
+    **[DDJ-FLX4 MIDI Message List (PDF)](https://www.pioneerdj.com/-/media/pioneerdj/software-info/controller/ddj-flx4/ddj-flx4_midi_message_list_e1.pdf)**
+
+    Note: some values in the official document differ from what the device actually sends.
+    The table below reflects the **real, observed values**.
+
 ## Performance Pads
 
 | Deck | Channel | Notes | Description |

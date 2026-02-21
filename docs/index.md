@@ -35,6 +35,13 @@ with controller:
 - Pioneer DDJ-FLX4 connected over USB
 - The controller must appear as a MIDI device (no additional drivers needed on most systems)
 
+## Useful reference
+
+The full MIDI message specification from Pioneer DJ:
+**[DDJ-FLX4 MIDI Message List (PDF)](https://www.pioneerdj.com/-/media/pioneerdj/software-info/controller/ddj-flx4/ddj-flx4_midi_message_list_e1.pdf)**
+
+Note that some values in the official document don't match what the device actually sends — see [MIDI Mappings](mappings.md) for the corrected table.
+
 ## Install
 
 ```bash

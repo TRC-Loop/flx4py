@@ -7,6 +7,7 @@ built-in animations on the pads, buttons, and VU meters.
 
 import time
 from enum import Enum
+from typing import Any
 
 import mido
 
@@ -47,7 +48,7 @@ class LEDController:
         output: An open ``mido`` output port connected to the controller.
     """
 
-    def __init__(self, output: mido.ports.BaseOutput) -> None:
+    def __init__(self, output: Any) -> None:
         self._out = output
 
     # ------------------------------------------------------------------
@@ -210,11 +211,11 @@ class LEDController:
             for tab in range(4):
                 self.set_tab(deck, tab, False)
 
-        for (name, deck, shifted), _ in BUTTON_LED.items():
-            try:
-                self.set_button(name, False, deck, shifted)
-            except Exception:
-                pass
+        seen: set[tuple[int, int]] = set()
+        for ch, note in BUTTON_LED.values():
+            if (ch, note) not in seen:
+                self._note(ch, note, 0)
+                seen.add((ch, note))
 
     # ------------------------------------------------------------------
     # Built-in animations

@@ -2,6 +2,7 @@
 Main DDJ-FLX4 controller class.
 """
 
+import time
 import threading
 import traceback
 from collections import defaultdict
@@ -381,7 +382,7 @@ class DDJFlx4:
                     self._handle(msg)
                 except Exception:
                     traceback.print_exc()
-            threading.Event().wait(0.001)  # 1 ms poll
+            time.sleep(0.001)
 
     def _handle(self, msg: mido.Message) -> None:
         if msg.type == 'note_on':

@@ -32,11 +32,20 @@ print(mido.get_output_names())
 
 You should see entries containing `FLX4`. If nothing appears, try a different USB cable or port.
 
-## Install docs dependencies
+## Build the documentation locally
 
-If you want to build the documentation locally:
+Install the docs group first, then serve:
 
 ```bash
+# With poetry (recommended)
+poetry install --with docs
+poetry run mkdocs serve
+
+# With pip
 pip install "flx4py[docs]"
 mkdocs serve
 ```
+
+!!! warning "MkDocs version"
+    flx4py's documentation requires **MkDocs 1.x** (pinned `<2.0.0`).
+    MkDocs 2.0 is not compatible with the Material theme used here.
